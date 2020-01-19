@@ -1,0 +1,31 @@
+pipeline {
+   agent any
+
+   stages {
+      stage("biuld the code") {
+         steps {
+            echo "intrgrtion with git"
+            git credentialsId: 'a698e85d-b24f-4a70-9769-6e83d7f58fab', url: 'https://github.com/radhika81090/pipeline_integration'
+            bat label: '', script: 'build.bat'
+         }
+      }
+      
+      stage("deploy the code") {
+         steps {
+            echo "intrgrtion with git"
+            git credentialsId: 'a698e85d-b24f-4a70-9769-6e83d7f58fab', url: 'https://github.com/radhika81090/pipeline_integration'
+            bat label: '', script: 'deploy.bat'
+         }
+      }
+      
+      stage("release the code") {
+         steps {
+            echo "intrgrtion with git"
+            git credentialsId: 'a698e85d-b24f-4a70-9769-6e83d7f58fab', url: 'https://github.com/radhika81090/pipeline_integration'
+            bat label: '', script: 'release.bat'
+         }
+      } 
+         
+   }
+   
+}
